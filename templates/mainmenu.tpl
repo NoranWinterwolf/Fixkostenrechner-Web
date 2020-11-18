@@ -1,5 +1,5 @@
 <div id="mainBox">
-<h2>Personen</h2>
+<h2>Willkommen <span id="username"></span></h2>
 <table class="personTable">
     <thead>
         <tr>

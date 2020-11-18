@@ -27,6 +27,21 @@ export default class API {
         API.request("getPersons", JSON.stringify(userData), callback);
     }
 
+    /////////////////////////////////// Incomes /////////////////////////////////////////
+    getIncomes(personID, callback) {
+        let personData = {
+            personID: personID
+        };
+        API.request("getIncomes", JSON.stringify(personData), callback);
+    }
+
+        /////////////////////////////////// Outgoings /////////////////////////////////////////
+        getOutgoings(personID, callback) {
+            let personData = {
+                personID: personID
+            };
+            API.request("getOutgoings", JSON.stringify(personData), callback);
+        }
 
     //////////////////////////////////// API REQUEST ///////////////////////////////////////
     static request(purpose, json, callback) {

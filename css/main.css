@@ -64,16 +64,45 @@ nav ul li button {
   margin: 0 0.5rem;
 }
 #mainModel {
-  margin: 10vw auto;
+  margin: 3vw auto;
   width: 50vw;
-}
-#loginBox {
-  margin: auto;
-  width: 30vw;
   background-color: #96D4D6;
   padding: 1rem;
   border-radius: 20px;
   box-shadow: 0px 0px 10px black;
+}
+#mainModel table {
+  border-collapse: separate;
+  border-spacing: 0 1rem;
+  width: 100%;
+}
+#mainModel table td {
+  text-align: center;
+  border-bottom: 2px solid black;
+  border-top: 2px solid black;
+  background-color: #ADBAF7;
+  padding: 1.5rem;
+  box-shadow: 5px 3px 5px black;
+  transition: background-color 0.5s, box-shadow 0.5s;
+}
+#mainModel table td:first-child {
+  border-left: 2px solid black;
+  border-radius: 10px 0 0 10px;
+}
+#mainModel table td:last-child {
+  border-right: 2px solid black;
+  border-radius: 0 10px 10px 0;
+}
+#mainModel table tbody tr {
+  cursor: pointer;
+}
+#mainModel table tr:hover td {
+  background-color: #697091;
+  box-shadow: none;
+}
+#loginBox {
+  margin: auto;
+  width: 30vw;
 }
 #loginBox h2 {
   text-align: center;
@@ -83,12 +112,14 @@ nav ul li button {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  align-content: center;
 }
 #loginBox .flexForm label {
-  width: 100%;
+  width: 60%;
 }
 #loginBox .flexForm input {
-  width: 100%;
+  width: 50%;
+  margin: 0 25%;
   height: 1.5rem;
   border-color: #344152;
   border-radius: 10px;
@@ -115,37 +146,4 @@ nav ul li button {
 .break {
   flex-basis: 100%;
   height: 0;
-}
-#mainBox {
-  background-color: #96D4D6;
-  padding: 2rem;
-}
-#mainBox table {
-  border-collapse: separate;
-  border-spacing: 0 1rem;
-  min-width: 100%;
-}
-#mainBox table tbody tr {
-  cursor: pointer;
-}
-#mainBox table tr td {
-  text-align: center;
-  border-bottom: 2px solid black;
-  border-top: 2px solid black;
-  background-color: #ADBAF7;
-  padding: 1.5rem;
-  box-shadow: 5px 3px 5px black;
-  transition: background-color 0.5s, box-shadow 0.5s;
-}
-#mainBox table tr td:first-child {
-  border-left: 2px solid black;
-  border-radius: 10px 0 0 10px;
-}
-#mainBox table tr td:last-child {
-  border-right: 2px solid black;
-  border-radius: 0 10px 10px 0;
-}
-#mainBox table tr:hover td {
-  background-color: #697091;
-  box-shadow: none;
 }

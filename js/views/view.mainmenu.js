@@ -29,6 +29,7 @@ export default class MainMenuView extends Bash_Route{
         $("#navbar").css("visibility", "visible");
         window.bash.createListeners();
         let userID = JSON.parse(window.bash.utils.getCookie("user")).id;
+        $("#username").html(JSON.parse(window.bash.utils.getCookie("user")).user);
         // call the API to get all persons from database from this userId
         window.bash.api.getPersons(userID, function(personData){
             let personJson = JSON.parse(personData);
@@ -50,7 +51,7 @@ export default class MainMenuView extends Bash_Route{
             // Persons are clickable to access detailed informations
             $('tbody tr').unbind("click").on("click", function() {
             window.location.hash = "/data?personId=" + $(this).attr('id');
-        })
+        });
         });
         
     }

@@ -21,6 +21,11 @@ if(isset($_REQUEST['purpose'])) {
         case "getPersons":
             getPersons();
         break;
+        case "getIncomes":
+            getIncomes();
+        break;
+        case "getOutgoings":
+            getOutgoings();
     }
 }
 ////////////////////////////// connection END ////////////////////
@@ -51,4 +56,36 @@ function getPersons() {
     }
     else
         die("noMatch");
+}
+
+///////////////////////////////// INCOMES ///////////////////////////////
+
+function getIncomes() {
+    $query =    "SELECT incomes.*
+                 FROM incomes
+                 WHERE personId = '" . $GLOBALS['data']->personID . "'";
+    $incomes = $GLOBALS['connection']->query($query);
+    if($incomes->num_rows > 0){
+        for($i = 0; $i < $incomes->num_rows; $i++){
+            $incomesData[$i] = $incomes->fetch_assoc();
+        }
+        die(json_encode($incomesData));
+    } else
+        die("noData");
+}
+
+///////////////////////////////// OUTGOINGS ///////////////////////////////
+
+function getOutgoings() {
+    $query =    "SELECT outgoings.*
+                 FROM outgoings
+                 WHERE personId = '" . $GLOBALS['data']->personID . "'";
+    $outgoings = $GLOBALS['connection']->query($query);
+    if($outgoings->num_rows > 0){
+        for($i = 0; $i < $outgoings->num_rows; $i++){
+            $outgoingData[$i] = $outgoings->fetch_assoc();
+        }
+        die(json_encode($outgoingData));
+    } else
+        die("noData");
 }
