@@ -24,15 +24,6 @@ export default class DataView extends Bash_Route{
         console.log(personID);
         this.renderIncomes(personID);
         this.renderOutgoings(personID);
-        // window.bash.api.getIncomes(personID, function(result){
-        //     renderIncomes(JSON.parse(result));
-        // });
-
-        // function renderIncomes(incomes){
-        //     for(i = 0; i<incomes.length; i++){
-
-        //     }
-        // }
     }
 
     renderIncomes(personID){
