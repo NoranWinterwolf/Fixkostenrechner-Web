@@ -35,4 +35,18 @@ export default class bash_pwa {
         let index = window.navigator.language.substring(0).indexOf('-');
         return window.navigator.language.substring(0, index);
     }
+
+    createListeners() {
+        // EventListener for navbar-buttons
+        //Logout
+        $("#logout").unbind("click").on("click", function() {
+            $("#navbar").css("visibility", "hidden");
+            window.bash.utils.deleteCookie("user");
+            window.location.hash = "/login";
+        }); 
+        //Home
+        $("#home").unbind("click").on("click", function() {
+            window.location.hash = "/";
+        });
+    }
 }

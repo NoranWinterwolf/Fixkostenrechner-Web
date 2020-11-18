@@ -18,6 +18,8 @@ export default class DataView extends Bash_Route{
         if(!window.bash.utils.getCookie("user")) {
             window.location.hash = "/login";
         }
+        $("#navbar").css("visibility", "visible");
+        window.bash.createListeners();
         console.log("data");
     }
 }

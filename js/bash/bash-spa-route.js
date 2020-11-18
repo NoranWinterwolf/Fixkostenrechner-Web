@@ -35,7 +35,12 @@ export default class Bash_Route{
 
     ////// If this route is called, return true ///////
     isActive(){
+    if(window.location.hash.indexOf('?') == -1)
         return (window.location.hash.substr(1).replace('#','') === this.slug);
+    else{
+        let index = window.location.hash.substr(1).indexOf("?");
+        return (window.location.hash.substr(1,index).replace("#","") === this.slug);
+    }
     }
 
     ////// Render the template and translate the markups ///////
@@ -77,5 +82,18 @@ export default class Bash_Route{
                 // ...and call the "templateChanged"-Event
                 window.dispatchEvent(new CustomEvent("templateChanged", {detail: {slug: slug}}));
         });
+    }
+    static getGetParameters() {
+        let index = window.location.hash.substr(1).indexOf("?");
+        if (index != -1) {
+            let parameters = window.location.hash.substr(index+2);
+            let result = parameters.split('&').reduce(function (result, item) {
+                let parts = item.split('=');
+                result[parts[0]] = parts[1];
+                return result;
+            }, {});
+            return(result);
+        } else
+            return {};
     }
 }
