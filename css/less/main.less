@@ -1,13 +1,23 @@
-/* Set Color-variables for use */
+// Set Color-variables for use
 @maincolor: #B7D3F0;
 @darkblue: #96B2D6;
 @lightblue: #ADBAF7;
+@lightblue-hover: #697091;
 @darkgreen: #96D4D6;
 @lightgreen: #ADF7E6;
 @navbarcolor: #344152;
 @font-bungee: 'Bungee Inline', cursive;
 @font-main: 'Poppins', sans-serif;
 
+/* Disable outline for buttons */
+button{
+    outline: none;
+    transition: background-color 0.5s;
+}
+/*add hover effect */
+button:hover, button:focus{
+    background-color: @lightblue-hover;
+}
 body {
     margin: 0;
     background-color: @darkblue;
@@ -48,12 +58,13 @@ nav{
     border-bottom: 2px solid black;
     border-top: 2px solid black;
     ul{
+        display: flex;
+        justify-content: space-around;
         list-style-type: none;
         margin: 0;
         padding: 0;
         overflow: hidden;
         li {
-            float: left;
             button{
                 font-size: 120%;
                 background-color: @lightgreen;
@@ -138,6 +149,8 @@ nav{
                 border-top: 2px solid black;
                 background-color: @lightblue;
                 padding: 1.5rem;
+                box-shadow: 5px 3px 5px black;
+                transition: background-color 0.5s, box-shadow 0.5s;
             }
             td:first-child{
                 border-left: 2px solid black;
@@ -147,6 +160,10 @@ nav{
                 border-right: 2px solid black;
                 border-radius: 0 10px 10px 0;
             }
+        }
+        tr:hover td{
+            background-color: @lightblue-hover;
+            box-shadow: none;
         }
     }
 }

@@ -1,4 +1,13 @@
-/* Set Color-variables for use */
+/* Disable outline for buttons */
+button {
+  outline: none;
+  transition: background-color 0.5s;
+}
+/*add hover effect */
+button:hover,
+button:focus {
+  background-color: #697091;
+}
 body {
   margin: 0;
   background-color: #96B2D6;
@@ -39,13 +48,12 @@ nav {
   border-top: 2px solid black;
 }
 nav ul {
+  display: flex;
+  justify-content: space-around;
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-}
-nav ul li {
-  float: left;
 }
 nav ul li button {
   font-size: 120%;
@@ -126,6 +134,8 @@ nav ul li button {
   border-top: 2px solid black;
   background-color: #ADBAF7;
   padding: 1.5rem;
+  box-shadow: 5px 3px 5px black;
+  transition: background-color 0.5s, box-shadow 0.5s;
 }
 #mainBox table tr td:first-child {
   border-left: 2px solid black;
@@ -134,4 +144,8 @@ nav ul li button {
 #mainBox table tr td:last-child {
   border-right: 2px solid black;
   border-radius: 0 10px 10px 0;
+}
+#mainBox table tr:hover td {
+  background-color: #697091;
+  box-shadow: none;
 }
